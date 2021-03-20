@@ -37,10 +37,10 @@ Dans ce TP, vous allez apprendre à manipuler les TableView. En iOS, les TableVi
 ![](image5.png?raw=true)
 
 11. Compilez. 
-> Vous devriez avoir un tableau avec trois cellueles éléments. 
+> Vous devriez avoir un tableau avec trois cellules. 
 
 ## Ajoutez les cellules dynamiquement
-Dans cette section, vous allez apprendre comment ajouter dynamiquement des celluels dans une table 
+Dans cette section, vous allez apprendre comment ajouter dynamiquement des cellules dans une TableView 
 
 1. Ajoutez un ViewController pour gérer la UITableView 
 File > New File > Cocoa Touch Class
@@ -49,11 +49,11 @@ File > New File > Cocoa Touch Class
 2. Nommez le nouveau fichier UITableViewController, Dans l'option Subclass Of, choisissez UITableViewController et dans Language choisissez Swift. 
 ![](image7.png?raw=true)
 
-3. Associez la UITableView du storyboard à son view controller
+3. Associez la UITableView du storyboard à son ViewController
 - Ouvrez le storyboard 
 - Cliquez sur TableViewController dans le panel de gauche 
-- Selectionnez l'onglet identiry dans le panel de droite 
-- Choisissez le nom de la classe que vous avez créé dans la section précédente 
+- Selectionnez l'onglet identity dans le panel de droite 
+- Dans le selecteur de la propriété Class, choisissez la classe que vous avez créé dans la section précédente 
 ![](image8.png?raw=true)
 
 4. Dans le panel de gauche, cliquez sur TableView et changez content (panel de droite) en Dynamic Prototypes
@@ -68,7 +68,7 @@ et style a Plain
 
 > Ouvrez le fichier CountriesTableViewController
 
-- Modifiez la méthode numberOfSections pour qu'elle retourne le nombre de section (3) et le nombre de ligne à afficher dans chaque section (5)
+- Modifiez la méthode numberOfSections pour qu'elle retourne le nombre de section (3) et le nombre de ligne fixe à afficher dans chaque section (5)
 
  ```Swift
 override func numberOfSections(in tableView: UITableView) -> Int {
@@ -80,8 +80,8 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
     }
 ```
 
-8. Decommentez la méthode tableView:cellForRowAtIndexPath et modifiez-la pour qu'elle retourne une cellule à afficher dans la table view.
-> Remplacez ```reuseIdentifier``` par ```countryCell```, savez-vous pourquoi ? 
+8. Decommentez la méthode ```tableView:cellForRowAtIndexPath``` et modifiez-la pour qu'elle retourne une cellule à afficher dans la TableView.
+> Remplacez ```reuseIdentifier``` par ```CountryCell```, savez-vous pourquoi ? 
 
 ```Swift
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +102,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 
 ## 3. Gestion des données 
-Dans cette section, nous allons modifier la datasource pour générer une liste de pays à afficher dans la Table View. 
+Dans cette section, vous allez modifier la datasource pour générer une liste de pays à afficher dans la TableView. 
 
 1. Crér le modèle de données
 - Cliquez droit sur le dossier principal du projet et choisissez New Group; nommez le groupe models. 
@@ -130,7 +130,7 @@ let countries = [
 ]
 ``` 
 
-2. Mofiez le controller pour retourner une liste de pays. 
+2. Modifiez le controller pour retourner une liste de pays. 
 
 ```Swift
 override func numberOfSections(in tableView: UITableView) -> Int {
@@ -158,10 +158,10 @@ override func numberOfSections(in tableView: UITableView) -> Int {
 4. Ajoutez quelques pays dans la liste puis retestez sans modifier les sources du controller. 
 Que remarquez-vous ? 
 
-5. Avez-vous remarqué les cellules vides ? Faites en sortes qu'elles n'apparaissent pas. 
+5. Avez-vous remarqué des cellules vides dans le tableau ? Faites en sortes qu'elles n'apparaissent pas. 
 
 ## 4. Personnalisez les cellules 
-Dans cette section, nous allons modifier les cellules de la table pour afficher les codes iso des pays en plus de leurs noms. 
+Dans cette section, vous allez modifier les cellules de la TableView pour afficher les codes iso des pays en plus de leurs noms. 
 
 1. Il y a quatre types de cellules : Detail(gauche, droite) et Subtitle. 
 ![](image13.png?raw=true)
