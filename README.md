@@ -3,6 +3,9 @@ Dans ce TP, vous allez apprendre à manipuler les TableView. En iOS, les TableVi
 
 ![](image1.png?raw=true)
 
+## Contributeurs 
+Entrez les noms et prénoms des membres du groupe (une personne par ligne).
+
 ## Créer une nouvelle application 
 
 1. Sur Xcode, créez une nouvelle application, appelez-la TP2_Groupe_[Numero] (où Numero représente le numéro de votre groupe)
@@ -204,3 +207,28 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 - Les pays se trouvant dans un même continent doivent être affichés sous la même section
 
 > Hint : Vous pouvez utiliser la fonction group by
+
+## 6. Ajouter une vue de détail 
+
+1. Ajouter un nouveau controller dans le story board (DetailViewController)
+2. Personnaliser la vue détail pour afficher un pays (photos en grand plan + name + continent) 
+3. Ajouter un lien (scene) qui part de l'écran de la tableView vers l'écran détail
+4. Quand l'utilisateur clique sur une cellule dans la tableview, afficher la vue détail en passant la référence du pays selectionné
+
+## 6. Ajouter des pays dynamiquement
+1. Ajouter un nouveau view controller dans le story board (AddViewController)
+2. Compléter la vue en y ajoutant un formulaire permettant de créer un pays (continent, nom, .....)
+3. Ajouter un lien (scene) entre la tableview et la view add
+4. Ajouter un icon dans la barre de navigation de la table view controller
+5. Quand l'utilisateur clique sur l'icone, afficher l'écran d'ajout d'un pays
+6. Quand l'utilisateur valide le formulaire, ajoute le nouveau pays dans la liste (s'il n'existe pas encore) et revenir sur l'écran de la liste des pays.
+
+
+## 6. Bonus 
+1. Customiser les cellules en créant votre propre vue
+2. Ajouter des données supplémentaires dans le pays comme la superice, une description, le nombre d'habitants, ...
+3. Ajouter un icone permettant d'ordonner la liste des pays (croissant vs decroissant)
+4. Liker un pays
+5. Supprimer un pays
+
+
